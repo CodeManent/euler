@@ -1,6 +1,8 @@
 #include "../solutions.h"
 #include "../euler.h"
 
+namespace euler{
+	namespace problem1{
 
 /******************************************************************************
  * Finds the sum of all multiples of 3 and 5 below 1000.
@@ -37,7 +39,7 @@ static long sumDivisibleBy(long num){
 /*
  * We use the inclusion/exclusion principle to calculate the result.
  * We add all the multiples of 3 and all the multiples of 5.
- * But now we have included twice the multiples if 15, so by excluding them,
+ * But now we have included twice the multiples of 15, so by excluding them,
  * we get the correct result.
  */
 static long solution2(){
@@ -46,4 +48,8 @@ static long solution2(){
 }
 
 RegisterSolution(1, solution2);
+
+// Close the namespaces
+	} //problem1
+} //euler
 

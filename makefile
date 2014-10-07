@@ -19,11 +19,13 @@ DEP_OBJ=$(patsubst %.cpp,%.o,$(DEP_SRC))
 DEP_DESC=$(patsubst %.cpp,%.d,$(DEP_SRC))
 
 #COMPILE VARS
+ifndef CXX
 CXX=g++-4.8 #set the compiler to be used
+endif
 CXXFLAGS+=-std=c++11 #compile enabling the new c++ standard
 CXXFLAGS+=-march=native #Build architecture set to the current machine's architecture
 CXXFLAGS+=-Wall -Wextra -pedantic #enable all warnings
-CXXFLAGS+=-O4
+CXXFLAGS+=-O3
 CXXFLAGS+=-fpic
 #CXXFLAGS+=-flto #link time optimization
 #CXXFLAGS+=-fwhole-program #gcc optimization

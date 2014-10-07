@@ -1,6 +1,9 @@
 #include "../solutions.h"
 #include "../euler.h"
 
+namespace euler{
+	namespace problem4{
+
 /******************************************************************************
  * Interface method for the isPalindrome(string).
  * Converts the long to a string and calls the method above to check whether
@@ -34,4 +37,7 @@ static long solution(){
 }
 
 RegisterSolution(4, solution);
+
+	} // problem4
+} // euler
 

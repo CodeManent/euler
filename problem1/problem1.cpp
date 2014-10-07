@@ -12,7 +12,7 @@ namespace euler{
  * Brute force approach. Checks every number if it's a multiple and
  * adds is to the result.
  */
-static long solution1(){
+long solution1(){
 	long result = 0;
 	for(long i = 0; i < 1000; ++i)
 		if(i % 3 == 0 || i % 5 == 0)
@@ -26,8 +26,11 @@ RegisterSolution(1, solution1);
  * num.
  * (e.g for num=3 the computations is:
  * 3+6+9+12+...+999 = 3*(1+2+3+4+...+333) = 3*(333+(333+1))/2;
+ *
+ * Should be a constexpr. The optimizer seems to make the optimization
+ * by itself.
  */
-static long sumDivisibleBy(long num){
+long sumDivisibleBy(long num){
 	//Find how many multiples there are for the specific number.
 	// The target is 999 instead of 1000 because we want all the multiples
 	// smaller than 1000.
@@ -42,7 +45,7 @@ static long sumDivisibleBy(long num){
  * But now we have included twice the multiples of 15, so by excluding them,
  * we get the correct result.
  */
-static long solution2(){
+long solution2(){
 	long result = sumDivisibleBy(3) + sumDivisibleBy(5) - sumDivisibleBy(3*5);
 	return result;
 }

@@ -1,16 +1,16 @@
 #include "../solutions.h"
 
-static
+namespace euler{
+	namespace problem9{
+
 bool isSolution(long a, long b, long c){
 	return (a*a + b*b) == c*c;
 }
 
-static
 long getC(long a, long b){
 	return 1000-a-b;
 }
 
-static
 long getB(long a){
 	if(a == 1000)
 		return 0;
@@ -23,7 +23,6 @@ long getB(long a){
  * So we go through numbers and try to find an a that makes all other
  * restrictions fall into place.
  */
-static
 long solution(){
 	//natural numbers, so a=0 isn't an accepted solution.
 	for(long a = 1; ; ++a){
@@ -33,9 +32,12 @@ long solution(){
 			return a*b*c;
 	}
 
-	//if it didn't find a solution return -1 as an ondication of error
+	//if it didn't find a solution return -1 as an indication of error
 	return -1;
 }
 
 RegisterSolution(9, solution);
+
+	} // problem9
+} // euler
 

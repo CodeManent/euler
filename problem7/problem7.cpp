@@ -3,11 +3,14 @@
 #include <algorithm>
 #include <vector>
 
+namespace euler{
+	namespace problem7{
+
 /*
  * Instead of checking every smaller prime, we just check the primes up 
  * to sqrt(number). The memory contains every prime up to num-1.
  */
-static bool isPrime(long number, std::vector<long> &memory){
+bool isPrime(long number, std::vector<long> &memory){
 	long sq = sqrt(number);
 	auto pos = std::find_if(memory.begin(), memory.end(), [sq](long num){
 		return num > sq;
@@ -21,7 +24,7 @@ static bool isPrime(long number, std::vector<long> &memory){
 }
 
 
-static long solution(){
+long solution(){
 	std::vector<long> primes;
 	primes.push_back(2);
 
@@ -34,4 +37,7 @@ static long solution(){
 }
 
 RegisterSolution(7, solution);
+
+	} // problem7
+} // euler
 

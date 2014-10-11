@@ -2,7 +2,10 @@
 #include <vector>
 #include <cstdlib>
 
-static char source[1001] =
+namespace euler{
+	namespace problem8{
+
+char source[1001] =
 "73167176531330624919225119674426574742355349194934"
 "96983520312774506326239578318016984801869478851843"
 "85861560789112949495459501737958331952853208805511"
@@ -30,7 +33,7 @@ static char source[1001] =
  * By subtracting the char '0' (character for zero, not NULL) we get the
  * actual number.
  */
-static std::vector<int> getNumbers(){
+std::vector<int> getNumbers(){
 	std::vector<int> numbers;
 	numbers.reserve(1000);
 
@@ -46,7 +49,7 @@ static std::vector<int> getNumbers(){
  * Brute force implementation of the product.
  * A better method should employ sonething like dynamic programming.
  */
-static long solution(){
+long solution(){
 	auto numbers = getNumbers();
 
 	int maxProduct = 0;
@@ -64,4 +67,7 @@ static long solution(){
 }
 
 RegisterSolution(8, solution);
+
+	} // problem8
+} // euler
 

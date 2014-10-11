@@ -4,15 +4,15 @@
 #include <iostream>
 #include <unordered_map>
 
+namespace euler {
+	namespace problem14 {
+
 /*
- * We use a map to storethe computed nodes of the collaz graph. Each entry is
+ * We use a map to store the computed nodes of the collaz graph. Each entry is
  * comprised of the node number (as key) and the node length.
  */
-static
 std::unordered_map<long, long> collaz;
 
-
-static
 void prepareCollaz(){
 	collaz[0] = 0;
 	collaz[1] = 1;
@@ -38,7 +38,6 @@ void prepareCollaz(){
 	}
 }
 
-static
 long getMaxChain(){
 	long longestChain = 0;
 	long maxLength = 0;
@@ -52,7 +51,6 @@ long getMaxChain(){
 	return longestChain;
 }
 		
-static
 long solution(){
 	prepareCollaz();
 	
@@ -66,7 +64,6 @@ RegisterSolution(14, solution);
  * 2nd solution to the 14th problem.
  * We walk through each chain and find the chain with the maximum length.
  */
-static
 long solution2(){
 	long maxLength = 0;
 	long maxChain = 0;
@@ -90,4 +87,7 @@ long solution2(){
 }
 
 RegisterSolution(14, solution2);
+	
+	} // problem14
+} // euler
 

@@ -1,7 +1,9 @@
 #include "../solutions.h"
 
+namespace euler{
+	namespace problem6{
 
-static long solution(){
+long solution(){
 	long sumSquares = 0;
 	for(long i=1; i <= 100; ++i)
 		sumSquares += i*i;
@@ -13,4 +15,7 @@ static long solution(){
 }
 
 RegisterSolution(6, solution);
+
+	} // problem6
+} // euler
 

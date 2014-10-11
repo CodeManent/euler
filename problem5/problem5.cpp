@@ -2,14 +2,15 @@
 #include "../euler.h"
 #include <algorithm>
 
+namespace euler{
+	namespace problem5{
+
 /*
  * Calculates the least common multiple of the numbers 1-20
  */
-static long solution(){
+long solution(){
 	std::vector<long> numbers(20, 0);
 	std::iota(numbers.begin(), numbers.end(), 1);
-
-	using namespace euler;
 
 	auto result = mergeFactors(primeFactors(numbers.front()));
 	for(auto number: numbers){
@@ -21,4 +22,7 @@ static long solution(){
 }
 
 RegisterSolution(5, solution);
+
+	} //problem5
+} //euler
 

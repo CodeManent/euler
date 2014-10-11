@@ -1,11 +1,13 @@
 #include "../solutions.h"
 #include "../bignum.h"
-#include <iostream>
+
+namespace euler{
+	namespace problem20{
 
 /*
  * Returns the sum of the digits in the 100!
  */
-static long solution(){
+long solution(){
 	euler::BigNum bn("1");
 	//compute the 100!
 	for(long i = 1; i <= 100; ++i)
@@ -19,4 +21,7 @@ static long solution(){
 }
 
 RegisterSolution(20, solution);
+
+	} // problem20
+} // euler
 

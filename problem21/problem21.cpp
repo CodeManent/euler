@@ -4,18 +4,20 @@
 #include <numeric> // accumulate
 #include <bitset>
 
+namespace euler{
+	namespace problem21{
+
 using namespace std;
-using namespace euler;
 
 template<typename T>
-static T vectorSum(const vector<T> &v){
+T vectorSum(const vector<T> &v){
 	return accumulate(begin(v), end(v), T(0));
 }
 
 /*
  * Find the sum of all amicable numbers < 10000.
  */
-static long solution(){
+long solution(){
 	constexpr unsigned long range = 10000UL;
 	vector<long> amicable;
 	bitset<range> checked; // use the bitset to avoid some computations.
@@ -56,4 +58,7 @@ static long solution(){
 }
 
 RegisterSolution(21, solution);
+
+	} // problem21
+} // euler
 

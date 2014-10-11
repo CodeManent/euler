@@ -2,18 +2,21 @@
 #include "../euler.h"
 #include <algorithm>
 
+namespace euler{
+	namespace problem11{
+
 /*
- * We compute only 4 of hte 8 available progucts.
+ * We compute only 4 of the 8 available products.
  * The directions we compute are:
  *     - Right
  *     - Down/Right
  *     - Down
  *     - Down/Left
  *
- *The remainig products don't need to be calculated.
+ * The remainig products don't need to be calculated.
  */
 template<typename C, typename T>
-static T maxProductAt(C y, C x, const euler::table<T> &numbers){
+T maxProductAt(C y, C x, const euler::table<T> &numbers){
 	C factors = 4;
 
 	// product on the horizontal line
@@ -48,10 +51,9 @@ static T maxProductAt(C y, C x, const euler::table<T> &numbers){
  * We traverse the table positions, calculating the product that corresponds to
  * each position. The maximum of the products is the desired one.
  */
-static
 long solution(){
 	typedef long  numberType;
-	auto nums = euler::loadNumbers<numberType>("problem11/numbers.txt");
+	auto nums = loadNumbers<numberType>("problem11/numbers.txt");
 	numberType  maxProduct = 0;
 
 	for(size_t y = 0; y < nums.size(); ++y)
@@ -62,4 +64,7 @@ long solution(){
 }
 
 RegisterSolution(11, solution);
+
+	} // problem11
+} // euler
 

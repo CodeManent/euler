@@ -1,6 +1,9 @@
 #include "../solutions.h"
 #include "../euler.h"
 
+namespace euler{
+	namespace problem15{
+
 /*
  * The number of paths for the grid positions equal to the corresponding
  * number of a pascal triangle.
@@ -48,4 +51,7 @@ static long solution2(){
 }
 
 RegisterSolution(15, solution2);
+
+	} // problem15
+} // euler
 

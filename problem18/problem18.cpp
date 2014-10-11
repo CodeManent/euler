@@ -2,6 +2,14 @@
 #include "../solutions.h"
 #include <algorithm>
 
+namespace euler{
+	namespace problem18{
+
+/* We go from top to bottom row by row and for each element of a row we add it
+ * with the max of the two corresponding elements of the previous row. That way,
+ * the last row will hold the best sum. Currently we don't keep the best path,
+ * only the best result.
+ */
 template<typename T>
 void compute(euler::table<T> &table){
 	for(size_t y = 1; y < table.size(); ++y){
@@ -16,10 +24,7 @@ void compute(euler::table<T> &table){
 	}
 }
 
-// We make the func private so we won't have problem with the func name on other
-// translation units during the link phase. We just need the function pointer
-// that we register at the end.
-static long solution(){
+long solution(){
 	long result = 0;
 
 	auto t = euler::loadNumbers<long>("problem18/numbers.txt");
@@ -36,4 +41,7 @@ static long solution(){
 
 // Register the solution
 RegisterSolution(18, solution);
+
+	} // problem18
+} // euler
 

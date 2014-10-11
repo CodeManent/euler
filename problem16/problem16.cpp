@@ -1,6 +1,9 @@
 #include "../solutions.h"
 #include "../bignum.h"
 
+namespace euler{
+	namespace problem16{
+
 /*
  * The 2^1000 can be calculated by doubling 1 1000 times.
  * So after calculating the number, we sum its digits and return the result.
@@ -15,4 +18,7 @@ long solution(){
 }
 
 RegisterSolution(16, solution);
+
+	} // problem16
+} // euler
 

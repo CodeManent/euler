@@ -3,6 +3,9 @@
 #include <string>
 #include <iomanip>
 
+namespace euler{
+	namespace problem19{
+
 enum Day: long
 {
 	Sunday		= 1,
@@ -42,7 +45,7 @@ Month& operator++(Month& m)
 	return m;
 }
 
-static bool isLeap(const long year)
+bool isLeap(const long year)
 {
 	if(year % 4 == 0){
 		if(year % 100 == 0){
@@ -57,7 +60,7 @@ static bool isLeap(const long year)
 }
 
 
-static long solution()
+long solution()
 {
 	long result = 0;
 	Day day = Monday;
@@ -116,4 +119,6 @@ static long solution()
 
 RegisterSolution(19, solution);
 
+	} // problem19
+} // euler
 

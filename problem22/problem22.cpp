@@ -4,10 +4,12 @@
 #include <string>
 #include <algorithm>
 
+namespace euler{
+	namespace problem22{
+
 /******************************************************************************
  * Loads the contents of a file into a string
  */
-static
 std::string loadFile(const std::string &path)
 {
 	std::string result;
@@ -25,7 +27,6 @@ std::string loadFile(const std::string &path)
  * Parses the string to extract the names.
  * The format is "NAME" with , beign used as name separator.
  */
-static
 std::vector<std::string> parseNames(const std::string &str)
 {
 	std::vector<std::string> result;
@@ -58,12 +59,12 @@ std::vector<std::string> parseNames(const std::string &str)
 	return result;
 }
 
-static long charValue(const char &ch)
+long charValue(const char &ch)
 {
 	return ch - 'A' + 1;
 }
 
-static long nameValue(const std::string &name)
+long nameValue(const std::string &name)
 {
 	long result = 0;
 	for(auto ch: name)
@@ -72,12 +73,12 @@ static long nameValue(const std::string &name)
 	return result;
 }
 
-static long nameScore(const size_t position, const std::string &name)
+long nameScore(const size_t position, const std::string &name)
 {
 	return position * nameValue(name);
 }
 
-static long solution()
+long solution()
 {
 	long result = 0;
 	auto names = parseNames(loadFile("problem22/names.txt"));
@@ -91,4 +92,7 @@ static long solution()
 }
 
 RegisterSolution(22, solution);
+
+	} // problem22
+} // euler
 

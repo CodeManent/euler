@@ -4,14 +4,14 @@
 #include <numeric> // accumulate
 #include <bitset>
 
-namespace problrm23{
+namespace euler{
+	namespace problem23{
 
 using namespace std;
-using namespace euler;
 
 enum fixName{ABUDANT, DEFICIENT, PERFECT};
 
-static fixName categorize(unsigned long num){
+fixName categorize(unsigned long num){
 	auto d = getProperDivisors(num);
 	auto sum = accumulate(begin(d), end(d), 0UL);
 
@@ -27,7 +27,7 @@ static fixName categorize(unsigned long num){
  * Finds the sum of all the positive integers which cannot be written as the
  * sum of two abundant numbers
  */
-static long solution(){
+long solution(){
 	constexpr unsigned long range = 28124;
 
 	//find abudant numbers
@@ -61,5 +61,6 @@ static long solution(){
 
 RegisterSolution(23, solution);
 
-}
+	} // problem23
+} //euler
 

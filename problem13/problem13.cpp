@@ -3,11 +3,14 @@
 #include <algorithm>
 #include <fstream>
 
+namespace euler {
+	namespace problem13 {
+
 /*
  * Loads the contents of the file into a vector
  * Each line(number) is represented by a string in the vector.
  */
-static std::vector<std::string> loadFile(const std::string &path){
+std::vector<std::string> loadFile(const std::string &path){
 	std::ifstream file(path);
 	std::vector<std::string> result;
 	while(file && !file.eof()){
@@ -20,7 +23,7 @@ static std::vector<std::string> loadFile(const std::string &path){
 }
 
 
-static long solution(){
+long solution(){
 	// load the file containing numbers
 	auto numbers = loadFile("problem13/numbers.txt");
 	// create the BigNums from the file so we can compute the result
@@ -40,4 +43,7 @@ static long solution(){
 }
 
 RegisterSolution(13, solution);
+
+	} // problem13
+} // euler
 

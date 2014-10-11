@@ -1,6 +1,9 @@
 #include "../solutions.h"
 #include "../euler.h"
 
+namespace euler {
+	namespace problem12 {
+
 /*
  * The solution exploits that the triangular numbers can be written as n(n+1)/2,
  * Either n or n+1 is even each time so se put on the even one the /2.
@@ -9,7 +12,7 @@
  * The factors of n don't need to be computed on the iteration step as they have
  * already been computed on the previous iteration (for the n+1 then, n now).
  */
-static long solution(){
+long solution(){
 	auto nfactors = 1L;
 	auto n1factors = 2L;
 	long result = 0;
@@ -48,4 +51,7 @@ static long solution(){
 }
 
 RegisterSolution(12, solution);
+
+	} // problem12
+} // euler
 

@@ -1,11 +1,14 @@
 #include "../solutions.h"
 #include "../bignum.h"
 
+namespace euler{
+	namespace problem25{
+
 /*
  * Returns which fibonacci number has more than 1000 digits.
  */
-static long solution(){
-	euler::BigNum f1("1");
+long solution(){
+	BigNum f1("1");
 	auto f2 = f1;
 	long term = 2;
 	do{
@@ -19,4 +22,7 @@ static long solution(){
 }
 
 RegisterSolution(25, solution);
+
+	} // problem25
+} // euler
 

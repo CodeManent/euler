@@ -2,10 +2,13 @@
 #include <string>
 #include <algorithm>
 
+namespace euler{
+	namespace problem24{
+
 /******************************************************************************
  * Returns the 1000000th permutation of the string 0123456789
  */
-static long solution()
+long solution()
 {
 	std::string str="0123456789";
 
@@ -21,4 +24,7 @@ static long solution()
 }
 
 RegisterSolution(24, solution);
+
+	} // problem24
+} // euler
 

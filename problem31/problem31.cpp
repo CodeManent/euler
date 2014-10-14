@@ -3,7 +3,8 @@
 #include <iostream>
 #include <numeric>
 
-namespace problem31{
+namespace euuler{
+	namespace problem31{
 
 
 unsigned long coins[] = {
@@ -73,5 +74,6 @@ long solution2(){
 
 RegisterSolution(31, solution2);
 
-}
+	} // problem31
+} // euler
 

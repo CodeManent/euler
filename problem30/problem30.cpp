@@ -1,8 +1,8 @@
 #include "../solutions.h"
 #include "../euler.h"
-#include <iostream>
 
-namespace problem30{
+namespace euler{
+	namespace problem30{
 
 // With this functinon we find the upper bound for the computation.
 unsigned long findUpperBound(){
@@ -17,7 +17,7 @@ unsigned long findUpperBound(){
 	return length * _95;
 }
 
-static constexpr unsigned long fifthPower[10] = {
+constexpr unsigned long fifthPower[10] = {
 	0,
 	1,
 	2*2*2*2*2,
@@ -30,7 +30,7 @@ static constexpr unsigned long fifthPower[10] = {
 	9*9*9*9*9
 };
 
-static constexpr unsigned long sumPowerDigits(unsigned long num){
+constexpr unsigned long sumPowerDigits(unsigned long num){
 
 /*	unsigned long sum = 0;
 	while(num > 0){
@@ -46,7 +46,7 @@ static constexpr unsigned long sumPowerDigits(unsigned long num){
 }
 
 
-static long solution()
+long solution()
 {
 
 	auto upperBound = findUpperBound();
@@ -54,7 +54,6 @@ static long solution()
 
 	for(unsigned long num = 10; num <= upperBound; ++num){
 		if(sumPowerDigits(num) == num){
-			//std::cout << "found number: " << num << std::endl;
 			sum += num;
 		}
 	}
@@ -64,5 +63,6 @@ static long solution()
 
 RegisterSolution(30, solution);
 
-}
+	} // problem30
+} // euler
 

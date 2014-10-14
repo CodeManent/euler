@@ -2,6 +2,9 @@
 #include "../solutions.h"
 #include <algorithm>
 
+namespace euler{
+	namespace problem67{
+
 template<typename T>
 void compute(euler::table<T> &table){
 	for(size_t y = 1; y < table.size(); ++y){
@@ -19,7 +22,7 @@ void compute(euler::table<T> &table){
 static long solution(){
 	long result = 0;
 
-	auto t = euler::loadNumbers<long>("problem67/triangle.txt");
+	auto t = loadNumbers<long>("problem67/triangle.txt");
 	compute(t);
 
 	//the number we want is the max of the last line
@@ -30,4 +33,7 @@ static long solution(){
 }
 
 RegisterSolution(67, solution);
+
+	} // problem67
+} // euler
 

@@ -1,6 +1,8 @@
 #include "../solutions.h"
 #include "../bignum.h"
-#include <iostream>
+
+namespace euler{
+	namespace problem48{
 
 /*
  * Self powers
@@ -11,7 +13,6 @@
  * most significant digits aren't part of the result and dont't affect the
  * solution.
  */
-namespace problem48{
 
 unsigned long filter(unsigned long num){
 	return num % 10000000000UL;
@@ -35,6 +36,7 @@ long solution(){
 }
 
 RegisterSolution(48, solution);
-}
 
+	} // problem48
+} // euler
 

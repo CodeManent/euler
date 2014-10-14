@@ -1,7 +1,10 @@
 #include "../solutions.h"
 #include <iostream>
 
-static long solution()
+namespace euler{
+	namespace problem28{
+
+long solution()
 {
 	unsigned long result = 1;
 	unsigned long current = 1;
@@ -19,4 +22,7 @@ static long solution()
 }
 
 RegisterSolution(28, solution);
+
+	} // problem28
+} // euler
 

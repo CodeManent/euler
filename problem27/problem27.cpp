@@ -1,7 +1,13 @@
 #include "../solutions.h"
 #include "../euler.h"
 
-static long primesProduced(const long a, const long b)
+namespace euler{
+	namespace problem27{
+
+/* Counts the consequtive primes that are produces by the formula n^2 + a*n + b
+ * for n=0, 1, 2, ... where a,b are the parameters.
+ */
+long primesProduced(const long a, const long b)
 {
 	long n = 0;
 
@@ -13,7 +19,7 @@ static long primesProduced(const long a, const long b)
 	return n;
 }
 
-static long solution()
+long solution()
 {
 	long maxA = 0, maxB = 0, maxCount = -1;
 
@@ -32,4 +38,7 @@ static long solution()
 }
 
 RegisterSolution(27, solution);
+
+	} // problem27
+} // euler
 
